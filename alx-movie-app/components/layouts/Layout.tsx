@@ -1,12 +1,15 @@
-// Example: Button.tsx
-import React from 'react';
+import { ComponentProps } from "@/interfaces";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Layout: React.FC = () => {
+const Layout: React.FC<ComponentProps> = ({ children }) => {
   return (
-    <button className="px-4 py-2 bg-blue-500 text-white rounded">
-      Click me
-    </button>
-  );
-};
+    <>
+      <Header />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+    </>
+  )
+}
 
 export default Layout;
